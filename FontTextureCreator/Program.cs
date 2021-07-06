@@ -23,16 +23,23 @@ namespace FontTextureCreator {
         readonly string[] donotsave={"´", "¨", "˛", "`", "ˇ", "˘", "⺅", "⺉", "⼥", "ﾟ", "゛", "ﾞ", "◯", "¯", "˝"};
 
         readonly int[] bigFontSaveTextIds={
-           6, /*Singleplayer*/
-          7,// /*Multiplayer*/
-           8, /*Settings*/
-          121,    /*Language*/
-           5, /*Information*/
-        9, //   /*Styles*/
-        10,  //  /*Close*/
-          82,//Character
+            6, /*Singleplayer*/
+            7,// /*Multiplayer*/
+            8, /*Settings*/
+            121,    /*Language*/
+            5, /*Information*/
+            9, //   /*Styles*/
+            10,  //  /*Close*/
+            82,//Character
             182, //Rabigon...
         };
+
+        /*
+            Make sure that You dont foget to do this after modified game
+            MonoGame mgcb -> Rebuild! (output Fonts copy to Publish folder for test)
+            Check that all bin folders are in the project
+            Game load bin files in Rabcr.SetLangUp method, so if new or remove ...
+        */
 
         const string 
             // True Type font file, make sure that all are installed
