@@ -69,6 +69,8 @@
     <None Include="Fonts\traditional chinese\GGF_traditionalChinese.sfd" />
     <None Include="Fonts\traditional chinese\GGF_traditionalChinese.ttf" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="allkanjitorange.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -36,12 +36,12 @@ namespace FontTextureCreator {
 
         const string 
             // True Type font file, make sure that all are installed
-            FontPathLatin_Arabic_Cyrillic=@"C:\Users\GeftGames\Desktop\Fonts\GGF\latin+arabiv+cyrilic\GGF_latin_arabic_cyrilic.ttf",
-            FontPathDevanagari=@"C:\Users\GeftGames\Desktop\Fonts\GGF\Devanagari\GGF_devanagari.ttf",
-            FontPathTraditionalChinese=@"C:\Users\GeftGames\Desktop\Fonts\GGF\traditional chinese\GGF_traditionalChinese.ttf",
-            FontPathKorean=@"C:\Users\GeftGames\Desktop\Fonts\GGF\korean\GGF_korean.ttf",
-            FontPathJapanese=@"C:\Users\GeftGames\Desktop\Fonts\GGF\japanese\GGF_Japanese.ttf",
-
+            FontPathLatin_Arabic_Cyrillic=@"C:\Users\GeftGames\source\repos\GeftGames\FontTextureCreator\FontTextureCreator\Fonts\latin+arabiv+cyrilic\GGF_latin_arabic_cyrilic.ttf",
+            FontPathDevanagari=@"C:\Users\GeftGames\source\repos\GeftGames\FontTextureCreator\FontTextureCreator\Fonts\devanagari\GGF_Devanagari.ttf",
+            FontPathTraditionalChinese=@"C:\Users\GeftGames\source\repos\GeftGames\FontTextureCreator\FontTextureCreator\Fonts\traditional chinese\GGF_traditionalChinese.ttf",
+            FontPathKorean=@"C:\Users\GeftGames\source\repos\GeftGames\FontTextureCreator\FontTextureCreator\Fonts\korean\GGF_korean.ttf",
+            FontPathJapanese=@"C:\Users\GeftGames\source\repos\GeftGames\FontTextureCreator\FontTextureCreator\Fonts\japanese\GGF_japanese.ttf",
+            allkanjitorange=@"C:\Users\GeftGames\source\repos\GeftGames\FontTextureCreator\FontTextureCreator\allkanjitorange.txt",
             // Output Texture
             BitmapTexturePath=@"C:\Users\GeftGames\source\repos\GeftGames\rabcrClient\rabcrClient\Default\Fonts",
             
@@ -812,7 +812,7 @@ namespace FontTextureCreator {
                             else *x=(byte)(n);
                         }
                         newBitmap.UnlockBits(bd);
-                        newBitmap.Save(BitmapTexturePath+"Font "+LF.name+" "+LF.font.Size+".png", ImageFormat.Png);
+                        newBitmap.Save(BitmapTexturePath+"\\Font "+LF.name+" "+LF.font.Size+".png", ImageFormat.Png);
                     }
                 }
 
@@ -825,7 +825,8 @@ namespace FontTextureCreator {
                     bytes.AddRange(sb.bytes);
                 }
 
-                File.WriteAllBytes(FontInfo+"FontInfo "+LF.name+" "+LF.font.Size+".bin",bytes.ToArray());
+                // Save position of chars and things like that...
+                File.WriteAllBytes(FontInfo+"\\FontInfo "+LF.name+" "+LF.font.Size+".bin",bytes.ToArray());
             }
 
            // Program.DrawGraph("Konec");
@@ -1074,7 +1075,7 @@ namespace FontTextureCreator {
         public void Dispose() { }
 
         public List<FromTo> JapaneseRange(){ 
-            string chars=File.ReadAllText(@"C:\Users\GeftGames\Programování\FontTextureCreator\FontTextureCreator\allkanjitorange.txt");
+            string chars=File.ReadAllText(allkanjitorange/*(@"C:\Users\GeftGames\Programování\FontTextureCreator\FontTextureCreator\allkanjitorange.txt"*/);
             List<FromTo> list=new List<FromTo>();
 
             foreach (char ch in chars) AddChar(ch);
