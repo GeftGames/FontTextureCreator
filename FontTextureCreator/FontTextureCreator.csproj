@@ -58,6 +58,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Fonts\devanagari\GGF_Devanagari.sfd" />
+    <None Include="Fonts\devanagari\GGF_Devanagari.ttf" />
+    <None Include="Fonts\japanese\GGF_japanese.sfd" />
+    <None Include="Fonts\japanese\GGF_japanese.ttf" />
+    <None Include="Fonts\korean\GGF_Korean.sfd" />
+    <None Include="Fonts\korean\GGF_korean.ttf" />
+    <None Include="Fonts\latin+arabiv+cyrilic\GGF_latin_arabic_cyrilic.sfd" />
+    <None Include="Fonts\latin+arabiv+cyrilic\GGF_latin_arabic_cyrilic.ttf" />
+    <None Include="Fonts\traditional chinese\GGF_traditionalChinese.sfd" />
+    <None Include="Fonts\traditional chinese\GGF_traditionalChinese.ttf" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

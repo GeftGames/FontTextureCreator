@@ -35,21 +35,21 @@ namespace FontTextureCreator {
         };
 
         const string 
-            // True Type font file
-            FontPathLatin_Arabic_cyrillic=@"C:\Users\GeftGames\Desktop\Fonts\GGF\latin+arabiv+cyrilic\GGF_latin_arabic_cyrilic.ttf",
-
+            // True Type font file, make sure that all are installed
+            FontPathLatin_Arabic_Cyrillic=@"C:\Users\GeftGames\Desktop\Fonts\GGF\latin+arabiv+cyrilic\GGF_latin_arabic_cyrilic.ttf",
+            FontPathDevanagari=@"C:\Users\GeftGames\Desktop\Fonts\GGF\Devanagari\GGF_devanagari.ttf",
             FontPathTraditionalChinese=@"C:\Users\GeftGames\Desktop\Fonts\GGF\traditional chinese\GGF_traditionalChinese.ttf",
             FontPathKorean=@"C:\Users\GeftGames\Desktop\Fonts\GGF\korean\GGF_korean.ttf",
             FontPathJapanese=@"C:\Users\GeftGames\Desktop\Fonts\GGF\japanese\GGF_Japanese.ttf",
 
             // Output Texture
-            BitmapTexturePath=@"C:\Users\GeftGames\rabcr\rabcrClient\rabcrClient\Default\Fonts\",
+            BitmapTexturePath=@"C:\Users\GeftGames\source\repos\GeftGames\rabcrClient\rabcrClient\Default\Fonts",
             
             // Output binnary font data - positions and sizes
-            FontInfo=@"C:\Users\GeftGames\rabcr\rabcrClient\rabcrClient\Resources\",
+            FontInfo=@"C:\Users\GeftGames\source\repos\GeftGames\rabcrClient\rabcrClient\Resources",
             
             // Lang file
-            LangFileXML=@"C:\Users\GeftGames\rabcr\rabcrClient\rabcrClient\Default\Lang\Lang.xml";
+            LangFileXML=@"C:\Users\GeftGames\source\repos\GeftGames\rabcrClient\rabcrClient\Default\Lang\Lang.xml";
 
         const string charsEverytime="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz !\"#$%&'()*+,-./0123456789:;<=>?@[\\]_{|}~©·÷×€\u2639\u263a\u2764";//\u7228
 
@@ -104,12 +104,20 @@ namespace FontTextureCreator {
                                           lf.BuildingRange.AddRange(JapaneseRange());
                                             lf.fontFile=FontPathJapanese;
 
-                                        } else if (lf.name=="korean") {
+                                        }  else if (lf.name=="korean") {
                                             lf.BuildingRange.Add(new FromTo{ From=0, To=500000 }); 
                                            // lf.BuildingRange.Add(new FromTo{ From=15017, To=17366 }); 
                                             lf.fontFile=FontPathKorean;
 
-                                        } else if (lf.name=="traditionalChinese") { 
+                                        }else if (lf.name=="devanagari") {
+                                            lf.BuildingRange.Add(new FromTo{ From=2309, To=2401 }); 
+                                            lf.BuildingRange.Add(new FromTo{ From=2325, To=2399 }); 
+                                            lf.BuildingRange.Add(new FromTo{ From=2305, To=2405 }); 
+                                            lf.BuildingRange.Add(new FromTo{ From=2406, To=2416 }); 
+                                           // lf.BuildingRange.Add(new FromTo{ From=15017, To=17366 }); 
+                                            lf.fontFile=FontPathDevanagari;
+
+                                        }else if (lf.name=="traditionalChinese") { 
                                             lf.BuildingRange.Add(new FromTo{ From=12289, To=65533 });
                                             lf.fontFile=FontPathTraditionalChinese;
                                            
@@ -120,12 +128,12 @@ namespace FontTextureCreator {
                                             lf.BuildingRange.Add(new FromTo{ From=64336, To=65023 });
                                             lf.BuildingRange.Add(new FromTo{ From=65136, To=65279 });
                                             lf.BuildingRange.Add(new FromTo{ From=69216, To=69247 });
-                                            lf.fontFile=FontPathLatin_Arabic_cyrillic;
+                                            lf.fontFile=FontPathLatin_Arabic_Cyrillic;
 
                                         } else  if (lf.name=="latin") {
-                                              lf.fontFile=FontPathLatin_Arabic_cyrillic;
+                                              lf.fontFile=FontPathLatin_Arabic_Cyrillic;
                                         } else  if (lf.name=="cyrillic") {
-                                              lf.fontFile=FontPathLatin_Arabic_cyrillic;
+                                              lf.fontFile=FontPathLatin_Arabic_Cyrillic;
                                         }
                                         LangFiles.Add(lf);
                                     }
@@ -217,9 +225,9 @@ namespace FontTextureCreator {
                                             lf.BuildingRange.Add(new FromTo{ From=64472, To=64472});
                                             lf.BuildingRange.Add(new FromTo{ From=64476, To=64476});
                                             lf.BuildingRange.Add(new FromTo{ From=64429, To=64429});
-                                            lf.fontFile=FontPathLatin_Arabic_cyrillic;
+                                            lf.fontFile=FontPathLatin_Arabic_Cyrillic;
                                         } else { 
-                                            lf.fontFile=FontPathLatin_Arabic_cyrillic;
+                                            lf.fontFile=FontPathLatin_Arabic_Cyrillic;
                                         }
 
                                         LangFiles.Add(lf);
@@ -354,6 +362,10 @@ namespace FontTextureCreator {
                     if (fontsize==18) lxf.quality=255/8;
                     else lxf.quality=255/5;
                     lxf.fontFile=FontPathKorean;
+                }else if (lxf.name=="devanagari"){
+                    if (fontsize==18) lxf.quality=255/8;
+                    else lxf.quality=255/5;
+                    lxf.fontFile=FontPathDevanagari;
                 }else if (lxf.name=="traditionalChinese"){
                     if (fontsize==18) lxf.quality=255/8;
                     else lxf.quality=255/5;
